@@ -1,11 +1,12 @@
 function sortArray(array){
-  let number = array[0]; 
-  let control;
-  for(let i = 0; i<array.lenght; i++){
-    for(let j = 0; j < arr.length - i - 1; j++){
-	 control = array[j+1]
-       arr[j + 1] = arr[j]
- 	 arr[j] = control
+  let control = array[0]
+  for(let i = 0; i<array.length; i++){
+    for(let j = 0; j < array.length - i - 1; j++){
+	 if(array[j+1] < array[j]){
+	    control = array[j+1]
+            array[j + 1] = array[j]
+ 	    array[j] = control    
+	 }
     }
   } 
   let newArray = invertArray(array)
@@ -19,7 +20,7 @@ function sortArray(array){
 
 function invertArray(array){
 	let newArray = [], count = 0;
-	for(let i = arr.length/2; i<arr.length; i++){
+	for(let i = array.length/2; i<array.length; i++){
 		newArray[count] = array[i]
 		count++	
 	}
